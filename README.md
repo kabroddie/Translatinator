@@ -13,3 +13,6 @@ _Tech Stack_
 - Vite for build tooling
 - Google Gemini AI API
 - Vercel for deployment
+
+Here is the link of Translatinator
+[https://translatinator.vercel.app/](https://translatinator.vercel.app/)
