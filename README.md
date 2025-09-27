@@ -9,7 +9,7 @@ _Features:_
 - Typing indicators
 
 _Tech Stack_
-Vanilla JavaScript
-Vite for build tooling
-Google Gemini AI API
-Vercel for deployment
+- Vanilla JavaScript
+- Vite for build tooling
+- Google Gemini AI API
+- Vercel for deployment
