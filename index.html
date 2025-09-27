@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translatinator</title>
+  </head>
+  <body>
+    <header>
+      <img src="https://cdn-icons-png.flaticon.com/512/11217/11217140.png" id="app-icon"/>
+      <div class="header-details">
+        <h1>Translatinator</h1>
+        <p>Your trusty translator!</p>
+      </div>
+    </header>
+    <main>
+      <section class="chat-section">
+        <div class="chat-messages">
+          <div class="chat-bubble ai">
+            <p>Hi! I'm Translatinator, Send me a message and I'll translate it to your selected language!</p>
+          </div>
+        </div>
+        
+        <div class="bottom-part">
+            <div class="language-selector-wrapper">
+              <h2>Translate to:</h2>
+              <select id="language-selector">
+                <option value="Bisaya">Bisaya</option>
+                <option value="Conyo">Conyo</option>
+                <option value="Tagalog">Tagalog</option>
+                <option value="English">English</option>
+                <option value="Japanese">Japanese</option>
+              </select>
+            </div>
+            <form class="send-bar-container" id="messageForm">
+              <textarea id="send-bar" placeholder="Type your message here..." rows="1"></textarea>
+              <button type="submit" id="send-btn"><i class="fa-regular fa-paper-plane"></i></button>
+            </form>
+          </div>
+      </section>
+    </main>
+    <footer>
+      <h2>© Translatinator 2025. All Rights Reserved</h2>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
