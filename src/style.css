@@ -103,7 +103,7 @@ main {
 }
 
 .chat-bubble.user {
-  background-color: darkgoldenrod;
+  background-color: #e3a919;
   align-self: flex-end;
   border-radius: 10px 0 10px 10px;
 }
