@@ -14,6 +14,10 @@ sendBar.addEventListener('keypress', async e => {
   }
 })
 
+sendBar.addEventListener('input', () => {
+  autoResizeTextarea()
+})
+
 sendBtn.addEventListener('submit', async e => {
   e.preventDefault()
   handlePrompt()
@@ -31,7 +35,6 @@ const handlePrompt = async () => {
 
   if (!prompt.trim()) return // Must have a non-empty message
 
-  // console.log(prompt, language)
   renderMessage(prompt, "user")
 
   showTypingIndicator()
@@ -49,6 +52,11 @@ const handlePrompt = async () => {
   scrollToBottom()
 }
 
+const autoResizeTextarea = () => {
+  sendBar.style.height = 'auto';
+  sendBar.style.height = Math.min(sendBar.scrollHeight, 160) + 'px';
+}
+
 const renderMessage = (text, person) => {
   const newChat = document.createElement('div')
   newChat.className = `chat-bubble ${person}`
@@ -57,6 +65,7 @@ const renderMessage = (text, person) => {
   chatMessages.appendChild(newChat)
 
   sendBar.value = ''
+  autoResizeTextarea()
 }
 
 const showTypingIndicator = () => {
