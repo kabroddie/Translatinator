@@ -24,9 +24,6 @@ header {
 #app-icon {
   width: 50px;
   aspect-ratio: 1/1;
-  /* background-color: white;
-  border: 2px solid black; */
-
 }
 
 .header-details {
@@ -186,5 +183,4 @@ footer > h2 {
   .language-selector-wrapper > select {
     width: 10%;
   }
-
 }

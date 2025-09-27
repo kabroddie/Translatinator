@@ -1,5 +1,3 @@
-// import { GoogleGenAI } from '@google/genai'
-
 const chatMessages = document.querySelector('.chat-messages')
 
 const sendBar = document.getElementById('send-bar')
@@ -52,11 +50,6 @@ const handlePrompt = async () => {
   scrollToBottom()
 }
 
-const autoResizeTextarea = () => {
-  sendBar.style.height = 'auto';
-  sendBar.style.height = Math.min(sendBar.scrollHeight, 160) + 'px';
-}
-
 const renderMessage = (text, person) => {
   const newChat = document.createElement('div')
   newChat.className = `chat-bubble ${person}`
@@ -66,6 +59,11 @@ const renderMessage = (text, person) => {
 
   sendBar.value = ''
   autoResizeTextarea()
+}
+
+const autoResizeTextarea = () => {
+  sendBar.style.height = 'auto';
+  sendBar.style.height = Math.min(sendBar.scrollHeight, 160) + 'px';
 }
 
 const showTypingIndicator = () => {
@@ -87,7 +85,7 @@ const hideTypingIndicator = () => {
   sendBtn.disabled = false;
 }
 
-async function generateAIResponse(message, language) {
+const generateAIResponse = async (message, language) => {
   try {
     const response = await fetch('/api/translate', { 
       method: "POST",
@@ -116,45 +114,6 @@ async function generateAIResponse(message, language) {
     console.error(`API call failed: ${error}`)
     throw error
   }
-
-  
-  // const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY })
-
-  // const config = {
-  //   thinkingConfig: {
-  //     thinkingBudget: 0,
-  //   },
-  //   systemInstruction: [
-  //     {
-  //       text: `You are a translator to English, Filipino, Conyo dialect, and Bisaya.
-  //             Translate only to the selected language: ${language}.
-  //             Keep your answers directly to the translation only.
-  //             Format your answers in this way: /<Language>/: <Translation>.
-  //             If Japanese, add the romaji translation on top of the japanese characters`,
-  //     }
-  //   ]
-  // }
-
-  // const model = 'gemini-2.5-flash'
-
-  // const contents = [
-  //   {
-  //     role: 'user',
-  //     parts: [
-  //       {
-  //         text: `Translate ${message} to ${language}`,
-  //       },
-  //     ],
-  //   },
-  // ]
-
-  // const response = await ai.models.generateContent({
-  //   model,
-  //   config,
-  //   contents,
-  // });
-
-  // return response.text
 }
 
 const scrollToBottom = () => {
